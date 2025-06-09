@@ -1,21 +1,19 @@
 import React from 'react'
-
+import { Header, Hero, Technology } from './components';
 function App() {
   return (
-    <div>
-      <Home />
+    <div className='dark:bg-gray-900'>
+      <div className='max-w-4xl mx-auto '>
+       <Header />
+       <div className='min-h-screen py-10'>
+        <Hero />
+        <Technology />
+       </div>
+
+      </div>
     </div>
   )
 }
-
-
-import Spline from '@splinetool/react-spline';
-function Home() {
-  return (
-    <Spline scene="https://prod.spline.design/UKdycNayjFIJgiKb/scene.splinecode" />
-  );
-}
-
 
 
 export default App
