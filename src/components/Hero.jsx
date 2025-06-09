@@ -5,8 +5,8 @@ import { FaGithub, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 function Hero() {
   return (
     <section className="bg-white dark:bg-gray-900">
-      <div className="container max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-16 mb-5">
+      <div className="container max-w-7xl px-4 sm:px-6 lg:px-8 ">
+        <div className="flex flex-col lg:flex-row gap-6 items-center justify-center lg:gap-16 min-h-screen my-auto">
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left lg:w-1/2">
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0H1aZiEZTS-lxKOd-4v-8XuaDe7MLImu-7A&s"
@@ -23,7 +23,7 @@ function Hero() {
             <div className="flex flex-row mt-4  gap-6 items-center">
               <p className="text-xl font-medium text-indigo-600 dark:text-indigo-400">
                 Fullstack Developer</p>
-                <div className="flex flex-row gap-1.5 text-4xl">
+                <div className="flex flex-row gap-2 text-3xl">
                   <a href="https://github.com/soynerd" className='text-black hover:text-indigo-700 dark:text-gray-300'>
                     <FaGithub />
                   </a>
@@ -48,7 +48,7 @@ function Hero() {
           </div>
           <div className="w-full lg:w-1/2 md:h-[400px] lg:h-[500px] flex flex-col items-center">
             <Spline scene="https://prod.spline.design/dvs1w-cITCPdSG-o/scene.splinecode" className="hidden md:block" />
-            <div className="mt-4 md:mt-10 flex flex-col sm:flex-row items-center gap-4">
+            <div className="mt-4 md:mt-10 flex flex-col sm:flex-row items-center gap-4 mb-25">
               <img
                 src="https://static.beebom.com/wp-content/uploads/2024/05/Luffy-devil-fruit.jpg?w=1000&quality=75"
                 className="w-16 h-16 rounded-full shadow-lg ring-4 ring-white dark:ring-gray-800"
