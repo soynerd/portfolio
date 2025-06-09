@@ -86,11 +86,11 @@ export default function TechGrid() {
 
   return (
     <div className="flex flex-col items-center justify-center bg-amber-50 dark:bg-gray-900 p-4 transition-colors duration-300 rounded-2xl my-10">
-        {/* <div className="w-full max-w-2xl text-center mb-8">
-            <h1 className="text-3xl font-bold text-black dark:text-white">Select Your Tech Stack</h1>
-            <p className="text-gray-600 dark:text-gray-400 mt-2">Click the technologies in the order of your preference. Once all are selected, an animation will play.</p>
-        </div> */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-2xl">
+        <div className="w-full max-w-3xl mb-8">
+            <h1 className="text-3xl font-bold text-black dark:text-white">Current technologies</h1>
+            <p className="text-gray-600 dark:text-gray-400 mt-2">I'm proficient in a range of modern technologies that empower me to build highly functional solutions. These are some of my main technologies.</p>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-3xl">
         {techItems.map((tech) => {
             const Icon = tech.icon;
 
@@ -100,7 +100,7 @@ export default function TechGrid() {
                 onClick={() => handleClick(tech.name)}
                 disabled={isAnimating}
                 className={clsx(
-                'flex flex-col items-center justify-center p-4 rounded-lg border-2 transition-all duration-300 group relative',
+                'flex flex-col items-center justify-center p-4 rounded-lg border-2 transition-all duration-300 group relative cursor-pointer',
                 'bg-zinc-100 border-zinc-200 text-black',
                 'dark:bg-zinc-900 dark:border-zinc-700 dark:text-white',
                 tech.selected ? 'border-black dark:border-white' : 'hover:border-gray-700 dark:hover:border-gray-400',
