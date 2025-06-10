@@ -1,4 +1,6 @@
 import Header from "./Header";
 import Hero from "./Hero";
 import Technology from "./Tech";
-export { Header, Hero, Technology };
+import RecentProjects from "./RecentProjects";
+
+export { Header, Hero, Technology, RecentProjects };
