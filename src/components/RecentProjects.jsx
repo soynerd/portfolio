@@ -1,15 +1,19 @@
 import React from "react";
-import { PiLinkSimpleDuotone  } from "react-icons/pi";
+import { PiLinkSimpleDuotone } from "react-icons/pi";
 import { FaGithub } from "react-icons/fa";
 
+// Glowing Card Component
 const GlowingBorderCard = ({ children }) => {
   return (
-    <div className="border-trace-card w-full max-w-sm rounded-2xl bg-slate-900 hover:scale-103 transition-normal duration-300 ease-in-out">
-      <div className="w-full h-full p-6 bg-slate-950 rounded-2xl">{children}</div>
+    <div className="border-trace-card w-full max-w-sm rounded-2xl hover:scale-105 transition-transform duration-300 ">
+      <div className="w-full h-full p-6 bg-white dark:bg-slate-950 rounded-2xl border-[0.5px] border-zinc-700">
+        {children}
+      </div>
     </div>
   );
 };
 
+// Main Component
 export default function App() {
   return (
     <>
@@ -23,20 +27,20 @@ export default function App() {
         .border-trace-card {
           --border-size: 1px;
           --border-angle: 0deg;
-          --glow-color: #ffffff;
+          --glow-color: #0ff;
           --glow-spread: 25%;
 
           border: var(--border-size) solid transparent;
-          
+
           background-image: 
-            linear-gradient(to right, #020617, #020617), 
+            linear-gradient(to right, #ffffff, #ffffff), 
             conic-gradient(
               from var(--border-angle), 
               transparent 0%, 
               var(--glow-color) var(--glow-spread), 
               transparent calc(var(--glow-spread) * 1.5)
             );
-          
+
           background-size: 100% 100%;
           background-position: center center;
           background-origin: content-box, border-box;
@@ -52,75 +56,78 @@ export default function App() {
         }
       `}</style>
 
-      <div className="min-h-5/12 w-full bg-slate-950 flex flex-col items-center justify-center p-4 font-sans py-35">
+      <div className="min-h-screen w-full bg-white dark:bg-slate-950 flex flex-col items-center justify-center py-16 px-4">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-3">
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-2">
             Recent Projects
           </h1>
-          <p className="text-lg text-gray-400">
-            Check out some of the projects I've worked on
+          <p className="text-lg text-gray-600 dark:text-gray-400">
+            Few things I've built
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <GlowingBorderCard className="w-full max-w-md mx-auto ">
-            <div className="">
-              <img
-                src="./img/smartdo.png"
-                alt="Smart DO"
-                className="rounded-lg w-full object-cover"
-              />
+          {/* Project 1 */}
+          <GlowingBorderCard>
+            <img
+              src="./img/smartdo.png"
+              alt="Smart DO"
+              className="rounded-lg w-full object-cover"
+            />
 
-          
-
-              <h2 className="text-xl font-semibold text-white mt-4 flex flex-row justify-between px-3">
-                Smart DO
-                <div className="flex flex-row gap-2 text-2xl">
-                  <a href="https://github.com/soynerd/smartdo" target="_blank" rel="noopener noreferrer" ><FaGithub /></a>
-                  <a href="https://smartdo.soynerd.com" target="_blank" rel="noopener noreferrer"><PiLinkSimpleDuotone /></a>
-                </div>
-              </h2>
-              <p className="text-gray-400 text-sm mt-1 px-3">Simple digital automation for your daily tasks/plans.</p>
-
-              <div className="flex flex-wrap gap-2 mt-3 px-5">
-                {["React", "TailwindCSS", "Redux", "Node JS", "Postgresql"].map((tech) => (
-                  <span
-                    key={tech}
-                    className="text-sm px-2 py-1 rounded-full border border-gray-400 text-gray-300"
-                  >
-                    {tech}
-                  </span>
-                ))}
+            <h2 className="text-xl font-semibold text-slate-900 dark:text-white mt-4 flex justify-between px-1">
+              Smart DO
+              <div className="flex gap-2 text-2xl text-slate-800 dark:text-white">
+                <a href="https://github.com/soynerd/smartdo" target="_blank"><FaGithub /></a>
+                <a href="https://smartdo.soynerd.com" target="_blank"><PiLinkSimpleDuotone /></a>
               </div>
+            </h2>
+
+            <p className="text-sm text-gray-600 dark:text-gray-400 mt-1 px-1">
+              Smart digital automation for your daily tasks.
+            </p>
+
+            <div className="flex flex-wrap gap-2 mt-3 px-1">
+              {["React", "TailwindCSS", "Redux", "Node JS", "PostgreSQL"].map((tech) => (
+                <span
+                  key={tech}
+                  className="text-sm px-2 py-1 rounded-full border border-gray-300 dark:border-gray-400 text-gray-700 dark:text-gray-300"
+                >
+                  {tech}
+                </span>
+              ))}
             </div>
           </GlowingBorderCard>
-          <GlowingBorderCard className="w-full max-w-md mx-auto">
-            <div className="">
-              <img
-                src="./img/iiitb.png"
-                alt="Smart DO"
-                className="rounded-lg w-full object-cover"
-              />
 
-              <h2 className="text-xl font-semibold text-white mt-4 flex flex-row justify-between px-3">
-                College Site
-                <div className="flex flex-row gap-2 text-2xl">
-                  <a href="https://github.com/soynerd/iiit-b" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
-                  <a href="https://iiit-b.onrender.com" target="_blank" rel="noopener noreferrer"><PiLinkSimpleDuotone /></a>
-                </div>
-              </h2>
-              <p className="text-gray-400 text-sm mt-1 px-3">A responsive website for IIIT Bhopal.</p>
+          {/* Project 2 */}
+          <GlowingBorderCard>
+            <img
+              src="./img/iiitb.png"
+              alt="College Site"
+              className="rounded-lg w-full object-cover"
+            />
 
-              <div className="flex flex-wrap gap-2 mt-3 px-5">
-                {["Node Js", "Express", "EJS", "CSS", "Postgresql"].map((tech) => (
-                  <span
-                    key={tech}
-                    className="text-sm px-2 py-1 rounded-full border border-gray-400 text-gray-300"
-                  >
-                    {tech}
-                  </span>
-                ))}
+            <h2 className="text-xl font-semibold text-slate-900 dark:text-white mt-4 flex justify-between px-1">
+              College Site
+              <div className="flex gap-2 text-2xl text-slate-800 dark:text-white">
+                <a href="https://github.com/soynerd/iiit-b" target="_blank"><FaGithub /></a>
+                <a href="https://iiit-b.onrender.com" target="_blank"><PiLinkSimpleDuotone /></a>
               </div>
+            </h2>
+
+            <p className="text-sm text-gray-600 dark:text-gray-400 mt-1 px-1">
+              Responsive website for IIIT Bhopal.
+            </p>
+
+            <div className="flex flex-wrap gap-2 mt-3 px-1">
+              {["Node JS", "Express", "EJS", "CSS", "PostgreSQL"].map((tech) => (
+                <span
+                  key={tech}
+                  className="text-sm px-2 py-1 rounded-full border border-gray-300 dark:border-gray-400 text-gray-700 dark:text-gray-300"
+                >
+                  {tech}
+                </span>
+              ))}
             </div>
           </GlowingBorderCard>
         </div>
@@ -128,4 +135,3 @@ export default function App() {
     </>
   );
 }
-
