@@ -1,7 +1,8 @@
 import React from 'react';
-import { ChevronLast } from 'lucide-react';
+import { ChevronLast, FileUser } from 'lucide-react';
 import Spline from '@splinetool/react-spline';
 import { FaGithub, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { MdOutlineContactPage } from "react-icons/md";
 function Hero() {
   return (
     <section className="bg-white dark:bg-gray-900">
@@ -33,6 +34,9 @@ function Hero() {
                   <a href="https://instagram.com/soynerd" className='text-black hover:text-indigo-700 dark:text-gray-300'>
                     <FaInstagram />
                   </a>
+                  <a href="https://instagram.com/soynerd" className='text-black hover:text-indigo-700 dark:text-gray-300'>
+                    <MdOutlineContactPage />
+                  </a>
                   
                   
 
@@ -46,7 +50,7 @@ function Hero() {
             </p>
             
           </div>
-          <div className="w-full lg:w-1/2 md:h-[400px] lg:h-[500px] flex flex-col items-center">
+          <div className="w-full lg:w-1/2 md:h-[500px] lg:h-[600px] flex flex-col items-center">
             <Spline scene="https://prod.spline.design/dvs1w-cITCPdSG-o/scene.splinecode" className="hidden md:block" />
             <div className="mt-4 md:mt-10 flex flex-col sm:flex-row items-center gap-4 mb-25">
               <img
