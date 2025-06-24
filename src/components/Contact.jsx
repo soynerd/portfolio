@@ -1,9 +1,10 @@
 import React from 'react';
+import emailjs from '@emailjs/browser'
 
 export default function Contact() {
-  const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
-  const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
-  const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+  const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_API_KEY;
 
   const [formData, setFormData] = React.useState({
     user_name: '',
@@ -22,55 +23,25 @@ export default function Contact() {
     }));
   };
 
-  const sendEmailMock = (form) => {
-    return new Promise((resolve, reject) => {
-      console.log("Simulating email sending with form data:", {
-        serviceId: EMAILJS_SERVICE_ID,
-        templateId: EMAILJS_TEMPLATE_ID,
-        form,
-        publicKey: EMAILJS_PUBLIC_KEY
-      });
-
-      if (
-        EMAILJS_SERVICE_ID === 'YOUR_SERVICE_ID' ||
-        EMAILJS_TEMPLATE_ID === 'YOUR_TEMPLATE_ID' ||
-        EMAILJS_PUBLIC_KEY === 'YOUR_PUBLIC_KEY'
-      ) {
-        setTimeout(() => {
-          reject({ text: "Please configure your EmailJS credentials." });
-        }, 1500);
-        return;
-      }
-
-      setTimeout(() => {
-        resolve({ status: 200, text: 'OK' });
-      }, 1500);
-    });
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    setStatus('sending');
-    setFeedbackMessage('');
-
-    sendEmailMock(e.target)
-      .then((result) => {
-        console.log(result.text);
-        setStatus('success');
-        setFeedbackMessage('Your message has been sent successfully!');
-        setFormData({ user_name: '', user_email: '', message: '' });
+    setStatus("Sending")
+    emailjs
+      .sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, e.target, {
+        publicKey: EMAILJS_PUBLIC_KEY,
       })
-      .catch((error) => {
-        console.error('FAILED...', error);
-        setStatus('error');
-        if (error.text === "Please configure your EmailJS credentials.") {
-          setFeedbackMessage("This form is not configured. Please add your EmailJS credentials to the code.");
-        } else {
-          setFeedbackMessage('Oops! Something went wrong. Please try again.');
-        }
-      });
-  };
-
+      .then(
+        () => {
+          setStatus("success")
+          setFeedbackMessage("Your message has been sent successfully!")
+          setFormData({ user_name: '', user_email: '', message: '' })
+        },
+        (error) => {          
+          setStatus("error")
+          setFeedbackMessage("Oops! Something went wrong. Please try again")
+        },
+      );
+  }
   return (
     <div className="w-full max-w-lg mx-auto bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700">
       <h1 className="text-3xl font-bold text-gray-900 dark:text-white text-center mb-2">Contact Me</h1>

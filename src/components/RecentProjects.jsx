@@ -6,7 +6,7 @@ import { FaGithub } from "react-icons/fa";
 const GlowingBorderCard = ({ children }) => {
   return (
     <div className="border-trace-card w-full max-w-sm rounded-2xl hover:scale-105 transition-transform duration-300 ">
-      <div className="w-full h-full p-6 bg-white dark:bg-slate-950 rounded-2xl border-[0.5px] border-zinc-700">
+      <div className="w-full h-full p-6 bg-white dark:bg-slate-950 rounded-xl border-zinc-700">
         {children}
       </div>
     </div>
@@ -25,7 +25,7 @@ export default function App() {
         }
 
         .border-trace-card {
-          --border-size: 1px;
+          --border-size: 2px;
           --border-angle: 0deg;
           --glow-color: #0ff;
           --glow-spread: 25%;
