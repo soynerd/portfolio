@@ -6,7 +6,7 @@ import { FaGithub } from "react-icons/fa";
 const GlowingBorderCard = ({ children }) => {
   return (
     <div className="border-trace-card w-full max-w-sm rounded-2xl hover:scale-105 transition-transform duration-300 ">
-      <div className="w-full h-full p-6 bg-white dark:bg-slate-950 rounded-xl border-zinc-700">
+      <div className="w-full h-full p-6 bg-gradient-to-br from-white to-black dark:bg-none dark:bg-slate-950 rounded-xl border-zinc-700">
         {children}
       </div>
     </div>
@@ -56,7 +56,7 @@ export default function App() {
         }
       `}</style>
 
-      <div className="min-h-screen w-full bg-white dark:bg-slate-950 flex flex-col items-center justify-center py-16 px-4">
+      <div className="min-h-screen w-full bg-gradient-to-b from-white to-black  dark:bg-slate-950 dark:bg-none flex flex-col items-center justify-center py-16 px-4">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-2">
             Recent Projects
@@ -75,27 +75,33 @@ export default function App() {
               className="rounded-lg w-full object-cover"
             />
 
-            <h2 className="text-xl font-semibold text-slate-900 dark:text-white mt-4 flex justify-between px-1">
+            <h2 className="text-xl font-semibold  text-white mt-4 flex justify-between px-1">
               Smart DO
-              <div className="flex gap-2 text-2xl text-slate-800 dark:text-white">
-                <a href="https://github.com/soynerd/smartdo" target="_blank"><FaGithub /></a>
-                <a href="https://smartdo.soynerd.com" target="_blank"><PiLinkSimpleDuotone /></a>
+              <div className="flex gap-2 text-2xl  text-white">
+                <a href="https://github.com/soynerd/smartdo" target="_blank">
+                  <FaGithub />
+                </a>
+                <a href="https://smartdo.soynerd.com" target="_blank">
+                  <PiLinkSimpleDuotone />
+                </a>
               </div>
             </h2>
 
-            <p className="text-sm text-gray-600 dark:text-gray-400 mt-1 px-1">
+            <p className="text-sm text-gray-200 dark:text-gray-400 mt-1 px-1">
               Smart digital automation for your daily tasks.
             </p>
 
             <div className="flex flex-wrap gap-2 mt-3 px-1">
-              {["React", "TailwindCSS", "Redux", "Node JS", "PostgreSQL"].map((tech) => (
-                <span
-                  key={tech}
-                  className="text-sm px-2 py-1 rounded-full border border-gray-300 dark:border-gray-400 text-gray-700 dark:text-gray-300"
-                >
-                  {tech}
-                </span>
-              ))}
+              {["React", "TailwindCSS", "Redux", "Node JS", "PostgreSQL"].map(
+                (tech) => (
+                  <span
+                    key={tech}
+                    className="text-sm px-2 py-1 rounded-full border border-gray-300 dark:border-gray-400 text-gray-300"
+                  >
+                    {tech}
+                  </span>
+                )
+              )}
             </div>
           </GlowingBorderCard>
 
@@ -107,27 +113,33 @@ export default function App() {
               className="rounded-lg w-full object-cover"
             />
 
-            <h2 className="text-xl font-semibold text-slate-900 dark:text-white mt-4 flex justify-between px-1">
+            <h2 className="text-xl font-semibold text-white mt-4 flex justify-between px-1">
               College Site
-              <div className="flex gap-2 text-2xl text-slate-800 dark:text-white">
-                <a href="https://github.com/soynerd/iiit-b" target="_blank"><FaGithub /></a>
-                <a href="https://iiit-b.onrender.com" target="_blank"><PiLinkSimpleDuotone /></a>
+              <div className="flex gap-2 text-2xl text-white">
+                <a href="https://github.com/soynerd/iiit-b" target="_blank">
+                  <FaGithub />
+                </a>
+                <a href="https://iiit-b.onrender.com" target="_blank">
+                  <PiLinkSimpleDuotone />
+                </a>
               </div>
             </h2>
 
-            <p className="text-sm text-gray-600 dark:text-gray-400 mt-1 px-1">
+            <p className="text-sm text-gray-200 dark:text-gray-400 mt-1 px-1">
               Responsive website for IIIT Bhopal.
             </p>
 
             <div className="flex flex-wrap gap-2 mt-3 px-1">
-              {["Node JS", "Express", "EJS", "CSS", "PostgreSQL"].map((tech) => (
-                <span
-                  key={tech}
-                  className="text-sm px-2 py-1 rounded-full border border-gray-300 dark:border-gray-400 text-gray-700 dark:text-gray-300"
-                >
-                  {tech}
-                </span>
-              ))}
+              {["Node JS", "Express", "EJS", "CSS", "PostgreSQL"].map(
+                (tech) => (
+                  <span
+                    key={tech}
+                    className="text-sm px-2 py-1 rounded-full border border-gray-300 dark:border-gray-400 text-gray-300"
+                  >
+                    {tech}
+                  </span>
+                )
+              )}
             </div>
           </GlowingBorderCard>
         </div>
