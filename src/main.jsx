@@ -9,13 +9,13 @@ import {
 } from "react-router";
 import App from "./App.jsx";
 import "./index.css";
-import { Home } from "./pages";
+import { Home, Projects } from "./pages";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route path="/" element={<Home />} />
-      <Route path="/projects" element={<Home />} />
+      <Route path="/projects" element={<Projects />} />
       <Route path="/visitors" element={<Home />} />
     </Route>
   )

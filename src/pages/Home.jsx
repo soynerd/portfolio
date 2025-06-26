@@ -5,23 +5,17 @@ import {
   TechStack,
   RecentProjects,
   Contact,
+  Footer,
 } from "../components";
 
 function Home() {
   return (
-    <div>
+    <div className="dark:bg-gray-900 transition-colors duration-700 ease-in bg-white">
       <Hero />
       <TechStack />
       <RecentProjects />
-
       <Contact />
-
-      <div className="max-w-4xl mx-auto text-center text-sm text-zinc-900 dark:text-zinc-100 py-2 ">
-        <p>
-          © Naveen. All rights reserved.{" "}
-          <span>Last Updated: June 24, 2025</span>
-        </p>
-      </div>
+      <Footer bg={"text-zinc-900 dark:text-zinc-100"} />
     </div>
   );
 }
